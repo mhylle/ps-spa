@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+    /* Since Angular has this but needs to load, this gives us the class early. */
+
+    .ng-hide {
+      display: none !important;
+    }
+  </style>
+  <title ng-bind="title">
+    psSpa
+  </title>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+
+  <!-- build:css styles/lib.css -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="styles/app.css"/>
+  <link rel="stylesheet" href="ext-modules/psFramework/psFramework.css"/>
+  <link rel="stylesheet" href="ext-modules/psMenu/psMenu.css"/>
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/app.css -->
+
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body class="container-fluid">
+<ps-framework title="Whitewater Adventures"
+              subtitle="Administrative Application"
+              icon-file="images/gulp-tiny.png">
+  <ps-menu>
+    <ps-menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></ps-menu-item>
+    <ps-menu-item label="Locations" icon="fa-location-arrow" route="locations"></ps-menu-item>
+    <ps-menu-item label="Raft Guides" icon="fa-user" route="guides"></ps-menu-item>
+  </ps-menu>
+
+</ps-framework>
+
+<!-- build:js js/lib.js -->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js js/app.js -->
+<!-- inject:js -->
+<script src="ext-modules/psDashboard/psDashboard.module.js"></script>
+<script src="ext-modules/psFramework/psFramework.module.js"></script>
+<script src="ext-modules/psMenu/psMenu.module.js"></script>
+<script src="ext-modules/psFramework/psFramework.controller.js"></script>
+<script src="ext-modules/psFramework/psFramework.directive.js"></script>
+<script src="ext-modules/psMenu/psMenu.module.js"></script>
+<script src="ext-modules/psMenu/psMenu.controller.js"></script>
+<script src="ext-modules/psMenu/psMenu.directive.js"></script>
+<script src="ext-modules/psMenu/psMenuItem.directive.js"></script>
+<script src="app/app.module.js"></script>
+<!-- endinject -->
+
+<!-- inject:templates:js -->
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+
+</html>
