@@ -5,10 +5,10 @@
     .module('psFramework')
     .controller('psFrameworkController', psFrameworkController);
 
-  psFrameworkController.$inject = ['$scope', '$window', '$timeout'];
+  psFrameworkController.$inject = ['$rootScope', '$scope', '$window', '$timeout'];
 
   /* @ngInject */
-  function psFrameworkController($scope, $window, $timeout) {
+  function psFrameworkController($rootScope, $scope, $window, $timeout) {
     var vm = this;
     vm.title = 'psFrameworkController';
 
@@ -19,6 +19,8 @@
     function activate() {
       $scope.$on('ps-menu-item-selected-event', function (evt, data) {
         $scope.routeString = data.route;
+        checkWidth();
+        broadcastMenuState();
       });
 
       $scope.isMenuVisible = true;
@@ -27,6 +29,7 @@
       $($window).on('resize.psFramework', function () {
         $scope.$apply(function () {
           checkWidth();
+          broadcastMenuState();
         })
       });
 
@@ -40,10 +43,25 @@
         $scope.isMenuButtonVisible = !$scope.isMenuVisible;
       };
 
+      $scope.menuButtonClicked = function () {
+        $scope.isMenuVisible = !$scope.isMenuVisible;
+        broadcastMenuState();
+        // $scope.$apply();
+      };
+
+      var broadcastMenuState = function () {
+        console.log('broadcasting menu');
+        $rootScope.$broadcast('ps-menu-show',
+          {
+            show: $scope.isMenuVisible
+          });
+      }
       $timeout(function () {
         checkWidth()
       }, 0);
     }
+
+
   }
 
 })();

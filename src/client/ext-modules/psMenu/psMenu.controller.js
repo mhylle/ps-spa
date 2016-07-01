@@ -13,11 +13,13 @@
     vm.title = 'psMenuController';
     vm.activeElement = null;
     activate();
-
+    $scope.showMenu = true;
     ////////////////
 
     function activate() {
-
+      $scope.$on('ps-menu-show', function (evt, data) {
+        $scope.showMenu = data.show;
+      });
     }
 
     this.getActiveElement = function () {
