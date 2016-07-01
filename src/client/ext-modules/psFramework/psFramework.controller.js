@@ -55,13 +55,12 @@
           {
             show: $scope.isMenuVisible
           });
-      }
+      };
+
       $timeout(function () {
         checkWidth()
       }, 0);
     }
-
-
   }
 
 })();
