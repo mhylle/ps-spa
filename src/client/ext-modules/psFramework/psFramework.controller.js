@@ -22,9 +22,13 @@
         checkWidth();
         broadcastMenuState();
       });
+      $scope.$on('ps-menu-orientation-changed-event', function (evt, data) {
+        $scope.osMenuVertical = data.isMenuVertical;
+      });
 
       $scope.isMenuVisible = true;
       $scope.isMenuButtonVisible = true;
+      $scope.isMenuVertical = true;
 
       $($window).on('resize.psFramework', function () {
         $scope.$apply(function () {

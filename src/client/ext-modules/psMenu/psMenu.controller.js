@@ -14,6 +14,7 @@
     vm.activeElement = null;
     activate();
     $scope.showMenu = true;
+    $scope.isVertical = true;
     ////////////////
 
     function activate() {
@@ -34,6 +35,12 @@
       $rootScope.$broadcast('ps-menu-item-selected-event',
         {route: route});
     };
+
+    this.toggleMenuOrientation = function () {
+      $scope.isVertical = !$scope.isVertical;
+      $rootScope.$broadcast('ps-menu-orientation-changed-event',
+        {isMenuVertical: $scope.isVertical});
+    }
   }
 
 })();
