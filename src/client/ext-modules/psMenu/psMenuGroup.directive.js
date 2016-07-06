@@ -3,7 +3,7 @@
 angular.module('psMenu').directive('psMenuGroup', function () {
   return {
     require: '^psMenu',
-    transclusion: true,
+    transclude: true,
     scope: {
       label: '@',
       icon: '@'
