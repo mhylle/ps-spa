@@ -13,10 +13,10 @@ angular.module('psMenu').directive('psMenuGroup', function () {
 
     link: function (scope, el, attr, ctrl) {
       scope.isOpen = false;
-      scope.closeMenu = function() {
+      scope.closeMenu = function () {
         scope.isOpen = false;
       };
-      scope.clicked = function() {
+      scope.clicked = function () {
         scope.isOpen = !scope.isOpen;
       }
     }
