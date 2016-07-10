@@ -17,18 +17,19 @@
     ////////////////
 
     function activate() {
+      $scope.isMenuVisible = true;
+      $scope.isMenuButtonVisible = true;
+      $scope.isMenuVertical = true;
+
       $scope.$on('ps-menu-item-selected-event', function (evt, data) {
         $scope.routeString = data.route;
         checkWidth();
         broadcastMenuState();
       });
-      $scope.$on('ps-menu-orientation-changed-event', function (evt, data) {
-        $scope.osMenuVertical = data.isMenuVertical;
-      });
 
-      $scope.isMenuVisible = true;
-      $scope.isMenuButtonVisible = true;
-      $scope.isMenuVertical = true;
+      $scope.$on('ps-menu-orientation-changed-event', function (evt, data) {
+        $scope.isMenuVertical = data.isMenuVertical;
+      });
 
       $($window).on('resize.psFramework', function () {
         $scope.$apply(function () {
@@ -54,7 +55,6 @@
       };
 
       var broadcastMenuState = function () {
-        console.log('broadcasting menu');
         $rootScope.$broadcast('ps-menu-show',
           {
             show: $scope.isMenuVisible
