@@ -14,6 +14,7 @@
     vm.activeElement = null;
     $scope.showMenu = true;
     $scope.isVertical = true;
+    $scope.allowHorizontalToggle = true;
 
     activate();
     ////////////////
@@ -21,6 +22,8 @@
     function activate() {
       $scope.$on('ps-menu-show', function (evt, data) {
         $scope.showMenu = data.show;
+        $scope.isVertical = data.isVertical;
+        $scope.allowHorizontalToggle = data.allowHorizontalToggle;
       });
 
       angular.element(document).bind('click', function (e) {
@@ -29,7 +32,7 @@
             // we clicked in the menu, so do not close it
             return;
           }
-          $scope.$apply(function() {
+          $scope.$apply(function () {
             $scope.openMenuScope.closeMenu();
           });
           e.preventDefault();

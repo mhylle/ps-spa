@@ -1,6 +1,6 @@
 (function() {
   'use strict';
 
-  angular.module('psMenu', []);
+  angular.module('psMenu', ['ngAnimate']);
 
 })();
