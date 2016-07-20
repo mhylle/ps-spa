@@ -18,13 +18,13 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
 
-  <!-- build:css styles/lib.css -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css"/>
   <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="styles/app.css"/>
   <link rel="stylesheet" href="ext-modules/psFramework/psFramework.css"/>
   <link rel="stylesheet" href="ext-modules/psMenu/psMenu.css"/>
+  <!-- build:css styles/lib.css -->
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
@@ -51,17 +51,15 @@
   </ps-menu>
 </ps-framework>
 
-<!-- build:js js/lib.js -->
-<!-- bower:js -->
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
 <script src="../../bower_components/angular/angular.js"></script>
 <script src="../../bower_components/angular-animate/angular-animate.js"></script>
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- build:js js/lib.js -->
+<!-- bower:js -->
 <!-- endbower -->
 <!-- endbuild -->
 
-<!-- build:js js/app.js -->
-<!-- inject:js -->
 <script src="ext-modules/psDashboard/psDashboard.module.js"></script>
 <script src="ext-modules/psFramework/psFramework.module.js"></script>
 <script src="ext-modules/psMenu/psMenu.module.js"></script>
@@ -73,6 +71,8 @@
 <script src="ext-modules/psMenu/psMenuGroup.directive.js"></script>
 <script src="ext-modules/psMenu/psMenuItem.directive.js"></script>
 <script src="app/app.module.js"></script>
+<!-- build:js js/app.js -->
+<!-- inject:js -->
 <!-- endinject -->
 
 <!-- inject:templates:js -->
